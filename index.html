@@ -9,70 +9,95 @@
 <meta name="author" content="sugarddy">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph / Social Sharing -->
+<!-- Open Graph -->
 <meta property="og:title" content="Millionaire Airdrop Detective">
 <meta property="og:description" content="We research legitimate crypto airdrops and testnets so you don’t chase hype.">
 <meta property="og:type" content="website">
 
 <style>
 :root{
-  --bg:#0a0f1c;
-  --card:#111827;
+  --bg:#070b16;
+  --card:#0f172a;
   --primary:#38bdf8;
   --accent:#22c55e;
   --text:#e5e7eb;
   --muted:#9ca3af;
-  --border:#1f2937;
+  --border:#1e293b;
+  --glow:rgba(56,189,248,0.25);
 }
 
 *{box-sizing:border-box}
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:Segoe UI,Arial,sans-serif;
-  background:var(--bg);
+  font-family:Segoe UI,Inter,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 500px at 50% -10%, #0b1225, transparent),
+    var(--bg);
   color:var(--text);
-  line-height:1.6;
+  line-height:1.7;
 }
 
 /* HEADER */
 header{
-  padding:70px 20px 55px;
+  padding:90px 20px 70px;
   text-align:center;
+  position:relative;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:120px;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--primary),transparent);
 }
 
 header h1{
-  margin:0 0 12px;
-  font-size:2.5em;
+  margin:0 0 14px;
+  font-size:clamp(2.2rem,4vw,2.9rem);
   color:var(--primary);
+  letter-spacing:0.5px;
 }
 
 header p{
-  margin:0 auto;
-  max-width:740px;
+  margin:0 auto 10px;
+  max-width:760px;
   color:var(--muted);
+  font-size:1.05rem;
 }
 
 .muted{
   color:var(--muted);
+  font-size:0.95rem;
 }
 
 /* BUTTONS */
 .btn{
-  display:inline-block;
-  margin:22px 6px 0;
-  padding:14px 28px;
-  background:var(--primary);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:26px 6px 0;
+  padding:14px 30px;
+  background:linear-gradient(180deg,#38bdf8,#0ea5e9);
   color:#020617;
-  font-weight:bold;
-  border-radius:6px;
+  font-weight:700;
+  border-radius:8px;
   text-decoration:none;
-  transition:all 0.2s ease;
+  box-shadow:0 0 0 transparent;
+  transition:all 0.25s ease;
 }
 
 .btn:hover{
-  opacity:0.9;
-  transform:translateY(-1px);
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px var(--glow);
 }
 
 .btn.secondary{
@@ -81,74 +106,97 @@ header p{
   border:1px solid var(--primary);
 }
 
+.btn.secondary:hover{
+  background:rgba(56,189,248,0.08);
+}
+
 /* MAIN */
 main{
-  max-width:900px;
+  max-width:960px;
   margin:auto;
-  padding:40px 20px 10px;
+  padding:50px 20px 20px;
 }
 
 section{
-  margin-bottom:38px;
+  margin-bottom:60px;
 }
 
 h2{
-  margin:0 0 16px;
+  margin:0 0 20px;
   text-align:center;
   color:var(--primary);
+  font-size:1.8rem;
+  letter-spacing:0.3px;
 }
 
+/* CARD */
 .card{
-  background:var(--card);
-  padding:22px;
-  border-radius:8px;
+  background:linear-gradient(180deg,#0f172a,#020617);
+  padding:26px;
+  border-radius:12px;
   border:1px solid var(--border);
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+  gap:20px;
 }
 
 /* BADGES */
 .badge{
-  background:var(--card);
+  background:linear-gradient(180deg,#0f172a,#020617);
   border:1px solid var(--border);
-  padding:18px;
-  border-radius:8px;
+  padding:22px;
+  border-radius:14px;
   text-align:center;
   color:var(--muted);
+  font-size:1rem;
+  transition:all 0.25s ease;
+}
+
+.badge:hover{
+  transform:translateY(-4px);
+  color:var(--text);
+  box-shadow:0 14px 35px rgba(0,0,0,0.4);
 }
 
 /* CTA */
 .cta{
   text-align:center;
-  padding:32px 20px;
+  padding:45px 25px;
+  border-radius:16px;
+  background:
+    linear-gradient(180deg,#0a0f1c,#020617);
   border:1px solid var(--border);
-  border-radius:10px;
-  background:linear-gradient(180deg,#0a0f1c,#020617);
+  box-shadow:0 20px 60px rgba(0,0,0,0.45);
+}
+
+.cta h2{
+  margin-bottom:10px;
 }
 
 /* DISCLAIMER */
 .disclaimer{
   text-align:center;
-  font-size:0.9em;
+  font-size:0.95rem;
   color:var(--muted);
 }
 
-/* COPYRIGHT */
+/* FOOTER */
 .copyright{
   text-align:center;
-  font-size:0.85em;
+  font-size:0.85rem;
   color:#cbd5e1;
-  margin:25px 0 10px;
+  margin:35px 0 10px;
 }
 
 .divider{
   border-top:1px solid var(--border);
-  margin-bottom:15px;
+  margin:20px auto 10px;
+  max-width:300px;
 }
 </style>
 </head>
@@ -159,11 +207,10 @@ h2{
   <h1>Millionaire Airdrop Detective</h1>
   <p>
     We research <strong>legitimate airdrops and testnet mining projects</strong>.<br>
-    Many promise millions few deliver.<br>
+    Many promise millions  few deliver.<br>
     <strong>Stay informed. Avoid disappointment.</strong>
   </p>
 
-  <!-- Credibility line -->
   <p class="muted">
     Independent crypto research focused on testnets & early-stage airdrops.
   </p>
